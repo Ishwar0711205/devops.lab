@@ -1,0 +1,3 @@
+[submodule "wanderlust"]
+	path = wanderlust
+	url = https://github.com/Atharv964/WanderLust.git
