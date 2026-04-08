@@ -8,20 +8,17 @@ public class LoginTest {
 
     @Test
     public void validLoginTest() {
-
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        driver.get("https://practicetestautomation.com/practice-test-login/");
+        driver.get("http://localhost:8080/login");
 
-        driver.findElement(By.id("username")).sendKeys("student");
-        driver.findElement(By.id("password")).sendKeys("Password123");
-        driver.findElement(By.id("submit")).click();
+        driver.findElement(By.id("username")).sendKeys("your_email@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("yourpassword");
+        driver.findElement(By.css("button[type='submit']")).click();
 
-        String expectedText = "Logged In Successfully";
-        String pageText = driver.getPageSource();
-
-        Assert.assertTrue(pageText.contains(expectedText));
+        String pageSource = driver.getPageSource();
+        Assert.assertTrue(pageSource.contains("listings") || pageSource.contains("Explore"));
 
         driver.quit();
     }
