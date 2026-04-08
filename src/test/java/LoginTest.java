@@ -11,10 +11,10 @@ public class LoginTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        driver.get("http://localhost:8080/login");
+        driver.get("http://localhost:3000/login");
 
-        driver.findElement(By.id("username")).sendKeys("your_email@gmail.com");
-        driver.findElement(By.id("password")).sendKeys("yourpassword");
+        driver.findElement(By.id("username")).sendKeys("ishwar1");
+        driver.findElement(By.id("password")).sendKeys("123");
         driver.findElement(By.css("button[type='submit']")).click();
 
         String pageSource = driver.getPageSource();
